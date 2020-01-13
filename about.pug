@@ -1,0 +1,24 @@
+extend main
+block title
+    title About Me
+block testingContent
+    .header
+        .container
+            +feature('sacc')
+            +feature('pug')
+            +feature('bootstrap')
+            |
+            |
+            .
+                this is container
+            h1 This Is About Me Section
+            - var friends = 10/10 + 2
+            case friends
+                when 0: - break
+                when 1: p You Have a Friend
+                when 3
+                when 4: p You Have some Friends
+                default: p You've #{friends} Friends
+prepend mainHead
+    main This Is Main From About Page!
+

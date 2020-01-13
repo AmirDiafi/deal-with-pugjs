@@ -1,0 +1,8 @@
+mixin myList
+    ul
+        - var list = ['html', 'css' , 'javascript', 'sass', 'pug', 'YIE Framework']
+        each item in list
+            li= item
+
+mixin feature(myFeat)
+    div.feat= myFeat

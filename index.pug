@@ -1,0 +1,107 @@
+doctype html
+include includes/variables
+include includes/mixin
+html
+    //This Is Visible Comment
+    //- And This Is Invisible Comment
+        and This Is Second Line
+    head 
+        meta(charset="UTF-8")
+        meta(name="description" content="This Template Build With pugJs")
+        block title
+            title My Resume
+        include includes/links.pug
+    body
+        block mainHead
+            main This is Main From Main Page
+        block testingContent
+            header(class='main-container', id='main-cont') This Is header
+                h1 This Is Head 1
+                ul(class="list", id="main-list")
+                li: a(href="www://www.goggle.com") Home
+                li About
+                li Contact
+                |
+                |
+                span(class='font-family ' + mainSize) Span
+                p lorem
+                div.parent this is link
+                    a(href='#') This Is Link
+                    div.child
+                        p love this pug template 
+                            span(class='main-color ' + mainSize) this is span 
+                            | and  
+                            b sass 
+                            | this is normal
+                h1 This Is My Skills
+                +feature('NPM')
+                +feature('CMD')
+                +feature('YARN')
+                +feature('CMDer')
+                    |
+                    |
+                    .
+                        This Is Paragraph
+                        b this is bold 
+                        bold this is bold
+                    bold this is bold
+                h1 Amir 
+                    span.main-color Diafi
+                    | and
+                    img(title='amir-img', href='img-01.jpg')
+                    |
+                    | and this is belong to main heade
+
+            form
+                h1 This is Login form
+                input(
+                    type='text',
+                    name='Username',
+                    placeholder='Username'
+                )
+                input(
+                    type='email',
+                    name='Email',
+                    placeholder='Email'
+                )
+                input(
+                    type='Subj',
+                    name='subj',
+                    placeholder='Subjuct',
+                    style='color: #222; border: 1px solid #333; border-radius: 30px; background: #099'
+                )
+                button submit
+                button Rest
+
+            // This is Buffered Code
+            p= 'This Is <strong> Strong </strong> Tag Doesnot Appear!'
+            ul
+                - for (var i = 0; i < 5; i++)
+                    li #{i}
+            ul
+                - var list = []
+                each item, index in list.length ? list : ['There is no Value']
+                    li= index + ":" + item
+                
+            ul
+                - var z = 0
+                while z < 10 
+                    li= z++
+            
+            |
+            |
+            .
+                This Is #{themeName}
+                and This Is #{bold.toUpperCase()}
+                and This Is real #{bold.toUpperCase()}
+                and this is pseudo !{"}"}! element
+                and this is pseudo \#{Amir}! element
+                and this is pseudo !{'!Amir'}! element
+                this is #[b interpolation] and this is #[p(class='pug' id='testing') paragraph after bold interpolation].. bey
+            
+
+
+        // start Scripts
+        include js/main.pug
+
+                
